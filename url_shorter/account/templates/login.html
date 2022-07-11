@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+
+{% block title %}Авторизация{% endblock %}
+
+{% block content %}
+
+    <div>
+        <a  href="{% url 'url_shorter:main_page' %}">На главную</a>
+        <div>
+            <h3>Авторизация</h3>
+            <hr>
+            <form action="{% url 'account:login' %}" method="POST">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <input type="submit" value="Войти">
+            </form>
+        </div>
+    </div>
+
+{% endblock content %}

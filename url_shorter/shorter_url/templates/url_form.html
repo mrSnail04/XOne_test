@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block title %} Url form{% endblock %}
+
+
+{% block content %}
+<a  href="{% url 'url_shorter:main_page' %}">На главную</a>
+
+<h2>Введите Url</h2>
+    <hr/>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" value="Обрезать URL" >
+    </form>
+{% endblock %}

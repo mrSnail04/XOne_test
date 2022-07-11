@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Main page{% endblock %}
+
+
+{% block content %}
+
+
+{% if user.is_authenticated %}
+    <a href="{% url 'account:logout' %}">Выйти</a>
+    <a  href="{% url 'url_shorter:url_form' %}">Добавить ссылку</a>
+    <h3>Список url</h3>
+    <hr/>
+    {% if urls %}
+        <ul>
+            {% for url in urls %}
+            <li>
+                <a href="{{ url.url_long }}">{{ url.url_short }}</a>
+            </li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% else %}
+    <a  href="{% url 'account:registration' %}">Регистрация</a>
+    <a  href="{% url 'account:login' %}">Войти</a>
+{% endif %}
+
+{% endblock %}
