@@ -1,0 +1,29 @@
+version: '3.9.13'
+
+services:
+  db:
+    image: postgres:13
+#    container_name: xone_db
+#    volumes:
+#      - pgdata:/var/lib/postgresql/data
+#    env_file:
+#      - .env.example
+#    expose:
+#      - '5432'
+#    environment:
+#      - POSTGRES_USER=${DB_USER}
+#      - POSTGRES_PASSWORD=${DB_PASSWORD}
+#      - POSTGRES_DB=${DB_NAME}
+  web:
+    build: .
+    volumes:
+      - .:/app
+    ports:
+      - 8000:8000
+    env_file:
+      - .env.example
+    depends_on:
+      - db
+volumes:
+  pgdata:
+  
