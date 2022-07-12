@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'shorter_url',
     'account',
     'crispy_forms',
+    'psycopg2',
 ]
 
 MIDDLEWARE = [
