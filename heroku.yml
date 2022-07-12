@@ -1,12 +1,7 @@
 build:
   docker:
     web: Dockerfile
-#release:
-#  image: web
-#  command:
-#    - python3 url_shorter/manage.py makemigrations\
-#    - python3 url_shorter/manage.py migrate \
-#    - python3 url_shorter/manage.py runserver 0.0.0.0:$PORT \
-  web: python3 url_shorter/manage.py makemigrations \
-       python3 url_shorter/manage.py migrate \
-       python3 url_shorter/manage.py runserver 0.0.0.0:$PORT \
+run:
+  web: python url_shorter/manage.py makemigrations \
+       python url_shorter/manage.py migrate \
+       python url_shorter/manage.py runserver 0.0.0.0:$PORT \
