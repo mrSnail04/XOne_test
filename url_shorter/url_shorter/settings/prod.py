@@ -3,7 +3,7 @@ from .base import *
 
 SECRET_KEY = 'django-insecure-f+^ndv5sm(#8ts7$ucy^zuij6)v450-eoa08!@7!4zha#c)fb^'
 DEBUG = True
-ALLOWED_HOSTS = ['https://xonetest.herokuapp.com']
+ALLOWED_HOSTS = ['xonetest.herokuapp.com']
 
 DATABASE_URL = os.environ.get('DATABASE_URL')
 db_from_env = dj_database_url.config(
