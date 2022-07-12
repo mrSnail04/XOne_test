@@ -24,6 +24,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CSRF_TRUSTED_ORIGINS = ['xonetest.herokuapp.com']
 
 ROOT_URLCONF = 'url_shorter.urls'
 
